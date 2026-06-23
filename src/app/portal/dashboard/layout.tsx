@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Scale, LogOut, FileText, MessageSquare, LayoutDashboard, Settings, FileSearch, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export default function DashboardLayout({
   children,
@@ -67,9 +67,9 @@ export default function DashboardLayout({
             <Scale className="h-6 w-6 text-accent" />
             <span className="font-serif font-bold">Portal</span>
           </Link>
-          <Button variant="ghost" size="icon" className="text-white" asChild>
-            <Link href="/portal"><LogOut className="h-5 w-5" /></Link>
-          </Button>
+          <Link href="/portal" className={buttonVariants({ variant: "ghost", size: "icon", className: "text-white" })}>
+            <LogOut className="h-5 w-5" />
+          </Link>
         </header>
 
         {/* Page Content */}

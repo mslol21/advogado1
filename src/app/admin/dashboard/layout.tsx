@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Scale, LogOut, Users, FileText, Settings, LayoutDashboard, BarChart3, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export default function AdminLayout({
   children,
@@ -85,9 +85,9 @@ export default function AdminLayout({
             <Scale className="h-6 w-6 text-primary" />
             <span className="font-serif font-bold text-foreground">Admin</span>
           </Link>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="/admin"><LogOut className="h-5 w-5" /></Link>
-          </Button>
+          <Link href="/admin" className={buttonVariants({ variant: "ghost", size: "icon" })}>
+            <LogOut className="h-5 w-5" />
+          </Link>
         </header>
 
         {/* Page Content */}
